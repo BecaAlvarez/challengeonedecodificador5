@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <title>challenge one decodificador 5</title>
+</head>
+<body>
+    <header>
+        <img src="#" alt="Logo Alura">
+    </header>
+    <div class="contanier">
+        <section>
+            <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText" id="inputText"></textarea>
+            <nav>
+                <button class="button" id="criptografar">Criptografar</button>
+                <button class="button" id="descriptografar">Decriptografar</button>
+            </nav>
+        </section>
+        <section>
+            <!--
+            <textarea name="outText" id="outText">
+    
+            </textarea>
+
+            -->
+            <p id="areaText2"></p>
+        </section>
+        <canvas width="600" height="400">
+
+        </canvas>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+<script>
+
+    var tela = document.querySelector('canvas');
+    var escrita = tela.getContext("webgl");
+    
+    var msg = document.getElementById("inputText");
+    var msg2;
+    msg.focus();
+
+
+    function showText(){
+        var ok = msg.value
+
+        if(ok == ""){
+            msg2 = document.write("sem texto")
+        }
+
+        msg2 = document.write(ok)
+    };
+
+    var buttonCript = document.getElementById("criptografar");
+    buttonCript.onclick = showText;
+    
+    
+</script>
+</html>
