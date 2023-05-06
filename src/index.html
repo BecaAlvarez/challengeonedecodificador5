@@ -9,29 +9,21 @@
 </head>
 <body>
     <header>
-        <img src="#" alt="Logo Alura">
+        <h1><img src="../src/assets/logo.png" alt="Logo Alura"></h1>
     </header>
-    <div class="contanier">
+    <main class="contanier">
         <section>
-            <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText" id="inputText"></textarea>
-            <nav>
-                <button class="button" id="criptografar">Criptografar</button>
-                <button class="button" id="descriptografar">Decriptografar</button>
-            </nav>
+            <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText" id="criptografar" cols="30" rows="10"></textarea>
+            <div>
+                <button class="btn-criptografar" onclick="">Criptografar</button>
+                <button class="btn-criptografar">Descriptografar</button>
+            </div>
         </section>
-        <section>
-            <!--
-            <textarea name="outText" id="outText">
-    
-            </textarea>
-
-            -->
-            <p id="areaText2"></p>
+        <section class="contanier2">
+            <textarea cols="30" rows="10" id="descriptografar" class="areaTexto2"></textarea>
+            <button class="btn-criptografar">Copiar</button>
         </section>
-        <canvas width="600" height="400">
-
-        </canvas>
-    </div>
+    </main>
 
     <footer>
 
@@ -39,25 +31,24 @@
 </body>
 <script>
 
-    var tela = document.querySelector('canvas');
-    var escrita = tela.getContext("webgl");
-    
-    var msg = document.getElementById("inputText");
-    var msg2;
+    var msg = document.getElementById("criptografar");
     msg.focus();
+    var msg2 = document.getElementById("descriptografar");
+    msg2.innerHTML(msg);
+    
 
+    /*function showText(texto, x, y){
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
 
-    function showText(){
-        var ok = msg.value
+        pincel.font='14px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);
+    };*/
 
-        if(ok == ""){
-            msg2 = document.write("sem texto")
-        }
+    var text = msg.value;
+    showText(text, 50, 20);
 
-        msg2 = document.write(ok)
-    };
-
-    var buttonCript = document.getElementById("criptografar");
     buttonCript.onclick = showText;
     
     
