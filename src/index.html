@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <title>challenge one decodificador 5</title>
 </head>
 <body>
     <header>
-        <h1><img src="../src/assets/logo.png" alt="Logo Alura"></h1>
+        <img src="../src/assets/logo.png" alt="Logo Alura" class="logo">
     </header>
-    <main class="contanier">
-        <section>
+    <main>
+        <section class="contanier1">
             <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText" id="criptografar" cols="30" rows="10"></textarea>
             <div>
                 <button class="btn-criptografar" onclick="">Criptografar</button>
@@ -26,30 +29,15 @@
     </main>
 
     <footer>
-
+        <p>Desenvolvido por <span>Rebeca Alvarez </span></p>
     </footer>
 </body>
 <script>
 
     var msg = document.getElementById("criptografar");
-    msg.focus();
+    //msg.focus();
     var msg2 = document.getElementById("descriptografar");
-    msg2.innerHTML(msg);
-    
-
-    /*function showText(texto, x, y){
-        var tela = document.querySelector('canvas');
-        var pincel = tela.getContext('2d');
-
-        pincel.font='14px Georgia';
-        pincel.fillStyle='black';
-        pincel.fillText(texto, x, y);
-    };*/
-
-    var text = msg.value;
-    showText(text, 50, 20);
-
-    buttonCript.onclick = showText;
+    var msgfinal = msg2.innerHTML(msg);
     
     
 </script>
