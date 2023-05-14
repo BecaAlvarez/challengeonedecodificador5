@@ -1,5 +1,7 @@
-const textArea = document.querySelector(".areaTexto1");
-const mensagem =document.querySelector(".areaTexto2");
+const textArea = document.querySelector("areaTexto1");
+const mensagem =document.querySelector("areaTexto2");
+
+const copiado = "";
 
 // A letra "e" é convertida para "enter"
 // A letra "i" é convertida para "imes"
@@ -49,3 +51,9 @@ function desencriptar(stringDesencriptado){
     return stringDesencriptado;
 }
 
+
+function btnCopy(){
+    copiado = mensagem.value;
+    mensagem.value = "";
+    return
+}
