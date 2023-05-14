@@ -60,5 +60,17 @@ main{
     border: none;
     border-radius: 24px;
     margin-bottom: 14px;
-    
+    margin-left: 98px;
+    margin-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+}
+
+.areaTexto2:focus{
+    outline: none;
+}
+
+.botoes{
+    display: flex;
+    margin-top: 18px;
 }
