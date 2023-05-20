@@ -1,7 +1,8 @@
-const textArea = document.querySelector("areaTexto1");
-const mensagem =document.querySelector("areaTexto2");
+const textArea1 = document.querySelector(".areaTexto1");
+const textArea2 = document.querySelector(".areaTexto2");
+//
+const btnCopiar = document.querySelector(".btn-copiar");
 
-const copiado = "";
 
 // A letra "e" é convertida para "enter"
 // A letra "i" é convertida para "imes"
@@ -10,9 +11,8 @@ const copiado = "";
 // A letra "u" é convertida para "ufat"
 
 function btnEncriptar(){
-    const textoEncriptado = encriptar(textArea.value);
-    mensagem.value = textoEncriptado;
-    textArea.value = "";
+    const textoEncriptado = encriptar(textArea1.value);
+    textArea2.value = textoEncriptado;
     return
 }
 
@@ -31,12 +31,12 @@ function encriptar(stringEncript){
 }
 
 function btnDesencriptar(){
-    const textoDesencriptado = desencriptar(textArea.value);
-    mensagem.value = textoDesencriptado;
-    textArea.value = "";
+    const textoDesencriptado = desencriptar(textArea1.value);
+    textArea2.value = textoDesencriptado;
     return
 
 }
+
 
 
 function desencriptar(stringDesencriptado){
@@ -52,8 +52,16 @@ function desencriptar(stringDesencriptado){
 }
 
 
-function btnCopy(){
-    copiado = mensagem.value;
-    mensagem.value = "";
-    return
+//Copiar
+function copyContent() {
+    var copiedText = textArea2.value;
+    
+    navigator.clipboard.writeText(copiedText).then(function(){
+        alert('Texto copiado com sucesso');
+    }).catch(function(err){
+        alert('Falha ao copiar o conteúdo');
+    });
 }
+
+
+

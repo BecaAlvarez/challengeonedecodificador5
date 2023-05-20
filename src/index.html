@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
-    <title>challenge one decodificador 5</title>
+    <title>challenge one decodificador 5 - Rebeca Alvarez</title>
 </head>
 <body>
     <header>
@@ -18,13 +18,13 @@
         <section class="contanier1">
             <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText"  cols="60" rows="24"></textarea>
             <div>
-                <button class="btn-criptografar" onclick="btnEncriptar()">Criptografar</button>
-                <button class="btn-criptografar" onclick="btnDesencriptar()">Descriptografar</button>
+                <button class="btn-criptografar" onclick="btnEncriptar()" id="btn_encriptografar">Criptografar</button>
+                <button class="btn-criptografar" onclick="btnDesencriptar()" id="btn_desencriptografar">Descriptografar</button>
             </div>
         </section>
         <section class="contanier2">
             <textarea cols="40" rows="24" class="areaTexto2"></textarea>
-            <button class="btn-copiar">Copiar</button>
+            <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
         </section>
     </main>
 
