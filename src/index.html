@@ -16,7 +16,16 @@
     </header>
     <main>
         <section class="contanier1">
-            <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText"  cols="60" rows="24"></textarea>
+            
+            <div class="contanierAreaText1">
+                <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText"  cols="60" rows="24"></textarea>
+                <div class="contanierWarm">
+                    <img src="../src/assets/warning.png" alt="Atenção" class="warm"/>
+                    <p>Apenas letras minúsculas e sem acento</p>
+                </div>
+                
+            </div>
+            
             <div>
                 <button class="btn-criptografar" onclick="btnEncriptar()" id="btn_encriptografar">Criptografar</button>
                 <button class="btn-criptografar" onclick="btnDesencriptar()" id="btn_desencriptografar">Descriptografar</button>
