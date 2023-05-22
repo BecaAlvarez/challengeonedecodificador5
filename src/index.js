@@ -3,6 +3,16 @@ const textArea2 = document.querySelector(".areaTexto2");
 //
 const btnCopy = document.querySelector(".btn-copiar");
 
+
+//Desabilitar acentuação
+textArea1.addEventListener('input', function(){
+    const texto = textArea1.value;
+    const semacentuacao = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    textArea1.value = semacentuacao;
+
+});
+
+
 //Botão criptografar
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea1.value);
@@ -61,29 +71,29 @@ function decrypt(decryptedText){
 function copyContent() {
     var copiedText = textArea2.value;
 
-    if(copiedText == ''){
-        alert('Campo vazio. Não há texto para ser copiado')
+    if(copiedText == ""){
+        alert('Campo vazio. Não há texto para ser copiado');
+        
     }else{
         navigator.clipboard.writeText(copiedText).then(function(){
             alert('Texto copiado com sucesso');
-        }).catch(function(err){
-            alert('Falha ao copiar o conteúdo', err);
         });
+        return
     }
-    
-    
 }
-
-//Desabilitar acentuação
-textArea1.addEventListener('input', function(){
-    var texto = textArea1.value;
-    var semacentuacao = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    textArea1.value = semacentuacao;
-
-});
 
 //Desabilitar input areatext 02
 window.onload = function() {
     textArea2.readOnly = true;
+
+    // Verifica se existe um valor salvo no localStorage
+    if(localStorage.getItem('savedText')) {
+        textArea2.value = localStorage.getItem('savedText');
+    }
+    // Salva o valor do textarea no localStorage quando a página é atualizada
+    window.onbeforeunload = function() {
+        textArea2.value = ""
+        localStorage.setItem('savedText', textArea2.value);
+    }
 }
 

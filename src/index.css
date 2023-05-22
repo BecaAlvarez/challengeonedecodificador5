@@ -54,7 +54,6 @@ section{
     border-color: transparent;
     background-color: transparent;
     color: white;
-    /*text-transform: lowercase;*/
 }
 
 ::placeholder{color: white}
