@@ -3,13 +3,7 @@ const textArea2 = document.querySelector(".areaTexto2");
 //
 const btnCopy = document.querySelector(".btn-copiar");
 
-
-// A letra "e" é convertida para "enter"
-// A letra "i" é convertida para "imes"
-// A letra "a" é convertida para "ai"
-// A letra "o" é convertida para "ober"
-// A letra "u" é convertida para "ufat"
-
+//Botão criptografar
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea1.value);
 
@@ -22,7 +16,7 @@ function btnEncriptar(){
     
 }
 
-
+//Areatext 01
 function encriptar(encryptedText){
     let arrayCode = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     encryptedText = encryptedText.toLowerCase();
@@ -36,6 +30,7 @@ function encriptar(encryptedText){
     return encryptedText;
 }
 
+//Botão Desencriptografar
 function btnDesencriptar(){
     const decryptedText = decrypt(textArea1.value);
     
@@ -48,7 +43,7 @@ function btnDesencriptar(){
 
 }
 
-
+//Areatext 02
 function decrypt(decryptedText){
     let arrayCode = [["e" , "enter"], ["i" ,"imes"], ["a" , "ai"], ["o" , "ober"], ["u", "ufat"]];
     decryptedText =  decryptedText.toLowerCase();
@@ -67,7 +62,7 @@ function copyContent() {
     var copiedText = textArea2.value;
 
     if(copiedText == ''){
-        alert('Campo vazio. Não há teto para ser copiado')
+        alert('Campo vazio. Não há texto para ser copiado')
     }else{
         navigator.clipboard.writeText(copiedText).then(function(){
             alert('Texto copiado com sucesso');
@@ -79,5 +74,16 @@ function copyContent() {
     
 }
 
+//Desabilitar acentuação
+textArea1.addEventListener('input', function(){
+    var texto = textArea1.value;
+    var semacentuacao = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    textArea1.value = semacentuacao;
 
+});
+
+//Desabilitar input areatext 02
+window.onload = function() {
+    textArea2.readOnly = true;
+}
 

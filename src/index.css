@@ -112,19 +112,15 @@ p{
     
 }
 
-
 .areaTexto2{
-    background-color: white;
     background-image: url('../src/assets/boneco.png');
-
-    
     background-repeat: no-repeat;
+    background-position: center;
     color: #0A3871;
     border: none;
     padding: 20px;
     border-radius: 24px;
     margin-bottom: 16px;
-    
 }
 
 .areaTexto2:focus{
