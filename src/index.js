@@ -4,6 +4,7 @@ const textArea2 = document.querySelector(".areaTexto2");
 const btnCopy = document.querySelector(".btn-copiar");
 
 
+
 //Desabilitar acentuação
 textArea1.addEventListener('input', function(){
     const texto = textArea1.value;
@@ -13,14 +14,17 @@ textArea1.addEventListener('input', function(){
 });
 
 
+
 //Botão criptografar
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea1.value);
 
     if(textoEncriptado == ''){
-        alert('Campo vazio. Digite o texto a ser criptografado')
+        alert('Campo vazio. Digite o texto a ser criptografado');
     }else{
+        
         textArea2.value = textoEncriptado;
+        changeBackground();
         return
     }
     
@@ -44,13 +48,17 @@ function encriptar(encryptedText){
 function btnDesencriptar(){
     const decryptedText = decrypt(textArea1.value);
     
+    
     if(decryptedText == ''){
-        alert('Campo vazio. Digite o texto a ser descriptografado')
+        alert('Campo vazio. Digite o texto a ser descriptografado');
+        
     }else{
+        
         textArea2.value = decryptedText;
-        return
+        changeBackground();
     }
-
+    
+    return
 }
 
 //Areatext 02
@@ -63,6 +71,7 @@ function decrypt(decryptedText){
            decryptedText = decryptedText.replaceAll(arrayCode[i][1], arrayCode[i][0]);
         }
     }
+
     return decryptedText;
 }
 
@@ -76,10 +85,11 @@ function copyContent() {
         
     }else{
         navigator.clipboard.writeText(copiedText).then(function(){
-            alert('Texto copiado com sucesso');
+            alert('Texto copiado com sucesso'); 
         });
         return
     }
+    
 }
 
 //Desabilitar input areatext 02
@@ -98,3 +108,20 @@ window.onload = function() {
 }
 
 //Substituição da imagem pelo texto
+function changeBackground() {
+    var x = document.getElementById('imgareatext2');
+
+    if(x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+}
+
+//Limpar areatext 02 através do botão
+function clearTextArea(){
+    if(textArea2 !== ""){
+        textArea2.value = "";
+        changeBackground();
+    }
+}

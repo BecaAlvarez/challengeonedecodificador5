@@ -31,9 +31,16 @@
             </div>
         </section>
         <section class="contanier2">
-            <textarea cols="40" rows="24" class="areaTexto2" id="areaTexto2"></textarea>
-            <!-- <img src="./assets/digitarTexto.png" class="imgText"/> -->
-            <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
+            <div class="contanierAreaText2">
+                <textarea cols="40" rows="24" class="areaTexto2" id="areaTexto2"></textarea>
+                <img src="./assets/digitarTexto.png" class="imgText" id="imgareatext2"/>
+            </div>
+            <div class="contanierClear">
+                <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
+                <button class="btn-clear" onclick="clearTextArea()">
+                    <img src="./assets/clear.png" class="imgClear" alt="Limpar texto"/>
+                </button>
+            </div>
         </section>
     </main>
 
