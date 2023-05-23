@@ -97,3 +97,4 @@ window.onload = function() {
     }
 }
 
+//Substituição da imagem pelo texto
