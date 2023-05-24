@@ -25,17 +25,18 @@
                 
             </div>
             
-            <div>
+            <div class="navButtons">
                 <button class="btn-criptografar" onclick="btnEncriptar()" id="btn_encriptografar">Criptografar</button>
                 <button class="btn-criptografar" onclick="btnDesencriptar()" id="btn_desencriptografar">Descriptografar</button>
             </div>
         </section>
         <section class="contanier2">
             <div class="contanierAreaText2">
-                <textarea cols="40" rows="24" class="areaTexto2" id="areaTexto2"></textarea>
                 <img src="./assets/digitarTexto.png" class="imgText" id="imgareatext2"/>
+                <textarea cols="40" rows="25" class="areaTexto2" id="areaTexto2"></textarea>
+                
             </div>
-            <div class="contanierClear">
+            <div class="navButtons">
                 <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
                 <button class="btn-clear" onclick="clearTextArea()">
                     <img src="./assets/clear.png" class="imgClear" alt="Limpar texto"/>

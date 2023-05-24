@@ -63,7 +63,9 @@ section{
         outline: none;
     }
 
-main div{
+
+
+.navButtons{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -74,8 +76,9 @@ main div{
 .contanierWarm{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .warm{
@@ -124,11 +127,6 @@ p{
     border: none;
 }
 
-.contanierClear{
-    display: flex;
-    flex-direction: row;
-}
-
 .btn-clear{
     width: 10%;
     background-color: transparent;
@@ -157,22 +155,23 @@ p{
     margin-bottom: 16px;
 }
 
+.imgText{
+    /*display: flex;*/
+    position: absolute;
+    align-self: center;
+    
+}
+
 .areaTexto2{
-    /*background-image: url('../src/assets/digitarTexto.png');
-    background-repeat: no-repeat;
-    background-position: center;*/
+    
     color: #0A3871;
     border: none;
     background-color: transparent;
-    margin: 20px 10px;
-    /*border-radius: 26px;
-    margin-bottom: 16px;*/
+    margin: 20px 10px ;
+    
 }
 
-.imgText{
-    position: absolute;
-    align-self: center;
-}
+
 
 .areaTexto2:focus{
     outline: none;

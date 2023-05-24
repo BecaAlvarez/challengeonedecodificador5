@@ -2,6 +2,7 @@ const textArea1 = document.querySelector(".areaTexto1");
 const textArea2 = document.querySelector(".areaTexto2");
 //
 const btnCopy = document.querySelector(".btn-copiar");
+const imagem = document.getElementById('imgareatext2');
 
 
 
@@ -14,6 +15,17 @@ textArea1.addEventListener('input', function(){
 });
 
 
+//Exibição de imagem na areatext 02
+
+function showImage(){
+    imagem.style.display = 'block'
+}
+
+function hidderImage(){
+    imagem.style.display = 'none'
+}
+
+
 
 //Botão criptografar
 function btnEncriptar(){
@@ -21,10 +33,12 @@ function btnEncriptar(){
 
     if(textoEncriptado == ''){
         alert('Campo vazio. Digite o texto a ser criptografado');
+        showImage();
     }else{
         
         textArea2.value = textoEncriptado;
-        changeBackground();
+        hidderImage();
+        //changeBackground();
         return
     }
     
@@ -51,11 +65,10 @@ function btnDesencriptar(){
     
     if(decryptedText == ''){
         alert('Campo vazio. Digite o texto a ser descriptografado');
-        
+        showImage();
     }else{
-        
         textArea2.value = decryptedText;
-        changeBackground();
+        hidderImage();
     }
     
     return
@@ -107,21 +120,19 @@ window.onload = function() {
     }
 }
 
-//Substituição da imagem pelo texto
-function changeBackground() {
-    var x = document.getElementById('imgareatext2');
-
-    if(x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-      x.style.display = 'none';
-    }
-}
 
 //Limpar areatext 02 através do botão
 function clearTextArea(){
+
     if(textArea2 !== ""){
         textArea2.value = "";
-        changeBackground();
+        showImage();
+    }else{
+        hidderImage();
     }
+    
 }
+
+
+
+
