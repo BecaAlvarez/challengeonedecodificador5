@@ -38,7 +38,6 @@ function btnEncriptar(){
         
         textArea2.value = textoEncriptado;
         hidderImage();
-        //changeBackground();
         return
     }
     

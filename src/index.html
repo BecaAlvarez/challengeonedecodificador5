@@ -31,10 +31,13 @@
             </div>
         </section>
         <section class="contanier2">
-            <div class="contanierAreaText2">
-                <img src="./assets/digitarTexto.png" class="imgText" id="imgareatext2"/>
-                <textarea cols="40" rows="25" class="areaTexto2" id="areaTexto2"></textarea>
-                
+            <div class="contanierAreaText2" >
+                <div class="no-msg-contanier" id="imgareatext2">
+                    <img src="./assets/imagemtexto.png" class="imgText" />
+                    <h3>Nenhuma mensagem encontrada</h3>
+                    <p>Digite o texto que deseja criptografar ou descripgrafar</p>
+                </div>
+                <textarea cols="40" rows="25" class="areaTexto2" id="areaTexto2"></textarea> 
             </div>
             <div class="navButtons">
                 <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
@@ -46,7 +49,7 @@
     </main>
 
     <footer>
-        <p>Desenvolvido por <span>Rebeca Alvarez </span></p>
+        <p>Desenvolvido por <span>Rebeca Alvarez</span></p>
     </footer>
     <script src="./index.js"></script>
 </body>
