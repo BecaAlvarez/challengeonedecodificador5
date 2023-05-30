@@ -1,8 +1,5 @@
 const textArea1 = document.querySelector(".areaTexto1");
 const textArea2 = document.querySelector(".areaTexto2");
-//
-const btnCopy = document.querySelector(".btn-copiar");
-const imagem = document.getElementById('imgareatext2');
 
 
 
@@ -14,17 +11,31 @@ textArea1.addEventListener('input', function(){
 
 });
 
+//Desabilitar input textarea 02
+window.onload = function() {
+    textArea2.readOnly = true;
 
-//Exibição de imagem na areatext 02
-
-function showImage(){
-    imagem.style.display = 'block'
+    // Verifica se existe um valor salvo no localStorage
+    if(localStorage.getItem('savedText')) {
+        textArea2.value = localStorage.getItem('savedText');
+    }
+    // Salva o valor do textarea no localStorage quando a página é atualizada
+    window.onbeforeunload = function() {
+        textArea2.value = ""
+        localStorage.setItem('savedText', textArea2.value);
+    }
 }
 
-function hidderImage(){
-    imagem.style.display = 'none'
-}
+//Imagem de fundo textarea 02
+function showImagem(show){
+    const imagem = document.getElementById('imgareatext2');
 
+    if(show){
+        imagem.style.display = 'block'
+    }else{
+        imagem.style.display = 'none'
+    }
+}
 
 
 //Botão criptografar
@@ -33,17 +44,18 @@ function btnEncriptar(){
 
     if(textoEncriptado == ''){
         alert('Campo vazio. Digite o texto a ser criptografado');
-        showImage();
+        showImagem(true)
+        return
     }else{
         
         textArea2.value = textoEncriptado;
-        hidderImage();
+        showImagem(false)
         return
     }
     
 }
 
-//Areatext 01
+//Textarea 01
 function encriptar(encryptedText){
     let arrayCode = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     encryptedText = encryptedText.toLowerCase();
@@ -64,16 +76,18 @@ function btnDesencriptar(){
     
     if(decryptedText == ''){
         alert('Campo vazio. Digite o texto a ser descriptografado');
-        showImage();
+        showImagem(true);
+        return
     }else{
         textArea2.value = decryptedText;
-        hidderImage();
+        showImagem(false);
+        return
     }
     
-    return
+   
 }
 
-//Areatext 02
+//Textarea 02
 function decrypt(decryptedText){
     let arrayCode = [["e" , "enter"], ["i" ,"imes"], ["a" , "ai"], ["o" , "ober"], ["u", "ufat"]];
     decryptedText =  decryptedText.toLowerCase();
@@ -94,7 +108,7 @@ function copyContent() {
 
     if(copiedText == ""){
         alert('Campo vazio. Não há texto para ser copiado');
-        
+        return
     }else{
         navigator.clipboard.writeText(copiedText).then(function(){
             alert('Texto copiado com sucesso'); 
@@ -104,30 +118,16 @@ function copyContent() {
     
 }
 
-//Desabilitar input areatext 02
-window.onload = function() {
-    textArea2.readOnly = true;
-
-    // Verifica se existe um valor salvo no localStorage
-    if(localStorage.getItem('savedText')) {
-        textArea2.value = localStorage.getItem('savedText');
-    }
-    // Salva o valor do textarea no localStorage quando a página é atualizada
-    window.onbeforeunload = function() {
-        textArea2.value = ""
-        localStorage.setItem('savedText', textArea2.value);
-    }
-}
-
 
 //Limpar areatext 02 através do botão
 function clearTextArea(){
 
     if(textArea2 !== ""){
+        /*caixa de dialogo para continuar*/
         textArea2.value = "";
-        showImage();
+        showImagem(true);
     }else{
-        hidderImage();
+        showImagem(false);
     }
     
 }
