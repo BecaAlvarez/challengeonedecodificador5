@@ -123,15 +123,17 @@ function copyContent() {
 function clearTextArea(){
 
     if(textArea2 !== ""){
-        /*caixa de dialogo para continuar*/
-        textArea2.value = "";
-        showImagem(true);
+        const resposta = confirm("O conteúdo será apagado. Deseja continuar?");
+        if(resposta == true){
+            textArea2.value = "";
+            showImagem(true);
+        }
+        return
     }else{
         showImagem(false);
+        return
     }
     
 }
-
-
 
 
