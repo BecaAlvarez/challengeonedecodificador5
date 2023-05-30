@@ -7,19 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
+    <link href="./src/index.css" rel="stylesheet">
     <title>challenge one decodificador 5 - Rebeca Alvarez</title>
 </head>
 <body>
     <header>
-        <img src="../src/assets/logo.png" alt="Logo Alura" class="logo">
+        <img src="./src/assets/logo.png" alt="Logo Alura" class="logo">
     </header>
     <main>
         <section class="contanier1">
             <div class="contanierAreaText1">
                 <textarea placeholder="Digite seu texto" class="areaTexto1" name="inputText"  cols="60" rows="24"></textarea>
                 <div class="contanierWarm">
-                    <img src="../src/assets/warning.png" alt="Atenção" class="warm"/>
+                    <img src="./src/assets/warning.png" alt="Atenção" class="warm"/>
                     <p>Apenas letras minúsculas e sem acento</p>
                 </div>
                 
@@ -33,7 +33,7 @@
         <section class="contanier2">
             <div class="contanierAreaText2" >
                 <div class="no-msg-contanier" id="imgareatext2">
-                    <img src="./assets/imagemtexto.png" class="imgText" />
+                    <img src="./src/assets/imagemtexto.png" class="imgText" />
                     <h3>Nenhuma mensagem encontrada</h3>
                     <p>Digite o texto que deseja criptografar ou descripgrafar</p>
                 </div>
@@ -42,7 +42,7 @@
             <div class="navButtons">
                 <button class="btn-copiar" onclick={copyContent()}>Copiar</button>
                 <button class="btn-clear" onclick="clearTextArea()">
-                    <img src="./assets/clear.png" class="imgClear" alt="Limpar texto"/>
+                    <img src="./src/assets/clear.png" class="imgClear" alt="Limpar texto"/>
                 </button>
             </div>
         </section>
@@ -51,7 +51,7 @@
     <footer>
         <p>Desenvolvido por <span>Rebeca Alvarez</span></p>
     </footer>
-    <script src="./index.js"></script>
+    <script src="./src/index.js"></script>
 </body>
 
 </html>
