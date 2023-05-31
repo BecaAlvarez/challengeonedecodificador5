@@ -8,5 +8,5 @@ Resultado do desafio do Challenge ONE do programa ONE, Oracle + Alura, o qual co
 - HTML e CSS
 - JavaScript 
 
-### Resultado Final :computer: 
+### :computer: Resultado Final  
 [Meu Decodificador](https://becaalvarez.github.io/challengeonedecodificador5/)
